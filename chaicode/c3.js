@@ -1,0 +1,2 @@
+// memory allocation in js 
+

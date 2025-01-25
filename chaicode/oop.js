@@ -165,3 +165,71 @@ console.log(usertwo);
 
 // // console.log(user);
 // console.log(user2);
+
+
+
+
+
+
+/* METHOD CHAINING*/
+
+
+
+
+/*Method chaining is a technique where multiple methods 
+can be called on an object in a single line of code. 
+Each method in the chain performs some operation and 
+then returns the object itself (typically this), 
+allowing the next method
+ in the chain to execute on the same object.*/
+
+
+/*Reduces the need to write repetitive variable references,
+ making the code cleaner and more readable.*/
+
+
+class chain {
+
+    constructor(name , email , age ){
+      
+        this.name= name ;
+        this.email = email;
+        this.age= age ;
+        this.score = 0;
+        }
+        login(){  // login function 
+            console.log(this.email , "has loged in!");
+            return this;
+        }
+
+        logout (){
+            console.log(this.email,"has logged out !");
+            return this;
+        }
+
+        updatescroll(){
+          this.score +=1;
+        //   console.log(this.score, " score has been incresed byone !");
+            return this;
+
+        }
+}
+var person2 = new chain("dkfnkd","kfnd44", "fknf");
+var person = new chain("deepanshu ", "dfsdffs888","sjfbjs");
+
+
+// console.log(person);
+// console.log(person.login());
+// person2.login();
+// person.updatescroll();
+// console.log(person.updatescroll());
+
+
+// method chaining //
+// person.login();
+// person.updatescroll();
+// person.logout();
+
+/*instead of writing again and agin we can write at one time .*/
+
+person.login().updatescroll().logout();

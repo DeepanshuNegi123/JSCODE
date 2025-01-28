@@ -84,7 +84,21 @@
 // })
 
 
-let namee = 'js';
-namee[1]= 'q';
-console.log(namee[1]);  // no change 
-console.log(namee); 
+// let namee = 'js';
+// namee[1]= 'q';
+// console.log(namee[1]);  // no change 
+// console.log(namee); 
+
+
+let a = 10;
+let b = a++;
+console.log(b); // 10
+
+console.log(a+b);//21
+
+let num = 1;
+// const sum = ++num + num++;
+console.log(++num + num++);
+// console.log(sum);  //4
+
+

@@ -51,20 +51,73 @@ console.log(myheros.shift()); // removes and gives first element .
  
 
 // includes will help to check if the provided number is present in the array or not .
-console.log(myheros.includes(8)); 
+// console.log(myheros.includes(8)); 
 
 
-console.log(myheros.indexOf(8)); // -1
+// console.log(myheros.indexOf(8)); // -1
 
 
 const newarr = myarr.join();
-console.log(newarr); 
-console.log(typeof(newarr)); // string
+// console.log(newarr); 
+// console.log(typeof(newarr)); // string
 
 
 // SLICE AND SPLICE 
 
 console.log("A " , myarr);
-
+const myn1= myarr.slice(3,6);
+const myn2= myarr.splice(3,6);
+// console.log(myn1);
+// console.log(myn2);
 const hello = myarr.slice (1,3); // provides the value from two ends .
-console.log(hello);
+// console.log(hello);
+
+const newa = [34,45,5,4,5,4];
+const newb = ["hello" , "world " , "hi "];
+const newc = newa.join();
+// console.log(typeof(newc)); //  string type
+
+const fun = ["hi " , "hllo", "buffalo ", "lelo "];
+const funn = [2,3,4,55,566,5,6];
+// console.log(fun.slice(1,3)); // print till 2nd index 
+// console.log(fun);
+
+// SPLICE  REMOVES THE INDEX PROVIDED IN THE ARRAY .
+// console.log(fun.splice(1,2));  // here it will print till the range 2nd index also but splice 
+// console.log(fun);
+
+
+
+
+
+
+// DAY 2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+const champion =  ["thor" , "america" , "makdi man "];
+const champion2 = ["aqua man " , "superman " , "batman"];
+// console.log(champion.push(champion2)); // lenght of new arry.
+// console.log(champion.length);
+// console.log(champion[3][0]); 
+console.log(champion.concat(champion2));    // this  combines two array without modifying the previous one .
+console.log(champion);
+
+
+/// SPREAD OPERATOR ...
+console.log(... champion,  ... champion2); // can give one or more arrays .
+
+// FLAT FUNCTION
+const die = ['djfbd','dfdv','dscss'];
+
+const die2 =  ['ddx3','dxcd' ,'343', 'cddcw'];
+
+console.log(die.push(die2));
+console.log(die);
+const new3 = die.flat(Infinity);
+console.log(new3); // remaoves the inside arrays .
+
+
+console.log(Array.isArray("helloworld"));
+console.log(Array.from ("jhatu"));
+
+

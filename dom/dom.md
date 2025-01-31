@@ -42,6 +42,7 @@ setTimeout(()=>document.body.style.background ='',3000);
 ```
 
 How it looks :-
+
 ![alt text](tree.png)
 
 

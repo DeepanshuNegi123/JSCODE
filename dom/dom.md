@@ -38,5 +38,12 @@ setTimeout(()=>document.body.style.background ='',3000);
   The truth about elk.
 </body>
 </html>
+
 ```
-how it looks 
+
+How it looks :-
+![alt text](tree.png)
+
+
+
+

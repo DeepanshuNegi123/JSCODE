@@ -1,4 +1,4 @@
-![alt text](https://github.com/DeepanshuNegi123/JSCODE/blob/9d95063d622805b9e39b3daa9c561a15ef400972/Screenshot%202025-01-31%20102658.png)
+  ![alt text](https://github.com/DeepanshuNegi123/JSCODE/blob/9d95063d622805b9e39b3daa9c561a15ef400972/Screenshot%202025-01-31%20102658.png)
 
 
 # DOM (Document Object Model)
@@ -45,6 +45,25 @@ How it looks :-
 
 ![alt text](tree.png)
 
+IN JS ATTRIBUTES MEANS CLASS AND ID .
+
+```
+changing background color using style in js .
+title.style.backgroundColor = "colorname" .
+title.style.padding = "xpx" // this will provide the padding of given in our  site .
+
+```
+
+```
+
+1.title.textContent // here title is class name and this will help in finding content inside the our class .
+
+
+2.title.innerHTML  // this will only display the content inside the html tag and displays all value including the html written inside the tag .
 
 
 
+3.title.innerText // this will display the text which is hidden  by using css properties.
+
+
+```

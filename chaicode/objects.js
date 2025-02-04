@@ -74,9 +74,9 @@ user.greeting = function(){
  };
 // const insta = new object();
 
-console.log(insta);
+// console.log(insta);
 insta.name = "sammwer"; // 
-console.log(insta);
+// console.log(insta);
 
 
 // objects inside the obbjects 
@@ -92,7 +92,7 @@ const regular = {
     3:"front end",
     4:"backend "
   }
-}
+};
 
 
 // console.log(regular.subjects[3]);
@@ -101,7 +101,48 @@ const regular = {
 
 const obj1 = {1:"a" , 2:"b",3:"c"};
 const obj2 = {4:"d" ,5:"e" , 6:"f"};
-const obj3 = Object.assign({},obj1,obj2);
-console.log(obj3);
 
+const obj3 = Object.assign({},obj1,obj2); // merging two arrays .
+
+// console.log(obj3);
+// spread operstor is used using a separate variable.
+const up = {...obj1};
+ // console.log(up);
+
+
+
+
+// OBJECTS INSIDE ARRAY //
+const users =[
+
+    {
+        id : 1,
+        email:"h@gmail.com",
+        rollno:23
+    }
+    ,
+
+    {
+          nmae : "hello world ",
+          class : 34,
+          section: "a"
+    }
+]
+
+ // console.log(users);
+ // console.log(users[0].email);
+
+
+
+ // console.log(Object.keys(regular));  // CAPITAL O data type is array.
+
+ // console.log(Object.keys(users[1])); // by using object method we can manipulate the arrays easily.
+
+// Object.keys helps us in finding keys 
+
+// Object.values helps  in finding values inside the objects .
+
+// console.log(Object.values(users));
+
+console.log(Object.entries(regular));
 

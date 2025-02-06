@@ -144,5 +144,30 @@ const users =[
 
 // console.log(Object.values(users));
 
-console.log(Object.entries(regular));
+// console.log(Object.entries(regular));
+
+/* 
+objects in javascript 
+DESTRUCTURING OF ARRAYS
+*/
+
+const course = {
+
+  coursename :"js in objects",
+  price:999,
+  time:"5months"
+
+}
+
+// console.log(course.coursename);
+// destructuring the course .
+
+
+// write the property in the braces and then automatically we dont have to use dot operator .
+const  {time} = course;
+console.log(course);
+console.log(time);
+ 
+
+
 

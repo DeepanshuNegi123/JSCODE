@@ -49,3 +49,16 @@ two();
 
 one ();
 
+// new concept  hoisting in js 
+
+
+function start(value){
+    return value+1;
+
+}
+start(6);
+
+startone(7); 
+const  startone = function (value){
+    return value+2;
+}

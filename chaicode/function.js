@@ -325,7 +325,7 @@ sum += input[x];
 }
 return sum;
 }
-console.log(operator(34,23,67));  // gives us an array
+//console.log(operator(34,23,67));  // gives us an array
 
 
 // usage of operator spread.
@@ -334,4 +334,72 @@ function operator1(value,value1, ...num1){
 return num1;
 }
 
-console.log(operator1(45,34,55,44,77)); // gives us only the input  at last .
+//console.log(operator1(45,34,55,44,77)); // gives us only the input  at last .
+
+
+
+// ARROW FUNCTIONS 
+const user = { // object 
+  username : "myname ",
+  price:"5500",
+  message: function(){ // function 
+//     console.log(`${this.username} ,  welcome to my website.`);
+// console.log(this);
+
+  }
+}
+// user.message();
+// user.username="hunnysama";
+// user.message();
+
+// console.log(this); // empty object 
+
+
+// user.message();
+
+
+// function chai(){
+//   const namee = "hurry";
+// console.log(this.namee);  // undefined 
+// }
+
+// chai();
+
+
+
+// ARROW FUNCTION 
+
+// const chai = function hee(){
+//   let username = "hloworld";
+//   console.log(this.username);
+
+// }
+//chai();
+
+
+// const chai = () => {
+//   let username = "hello"
+//   console.log(this.username);
+// }
+
+// chai();
+
+// PURE ARROW FUNCTION //
+
+// const hello =(inside is parameter)=>{ here fucntion }
+
+const name  = (num1 , num2 )=>{
+  return num1+num2; // we have to write return on including braces curly
+}
+
+let under = name;
+console.log(under(2,3));
+
+const hum = (a , c)=> a+c;  // dont need to write return when nothing is included .
+console.log(hum(45,66));
+
+const hume = ()=> ({
+username:"helloworld"
+
+}) 
+hume();

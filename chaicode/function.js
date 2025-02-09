@@ -393,13 +393,30 @@ const name  = (num1 , num2 )=>{
 }
 
 let under = name;
-console.log(under(2,3));
+// console.log(under(2,3));
 
 const hum = (a , c)=> a+c;  // dont need to write return when nothing is included .
-console.log(hum(45,66));
+// console.log(hum(45,66));
 
 const hume = ()=> ({
 username:"helloworld"
 
 }) 
 hume();
+
+
+
+// IMMEDIATELY INVOEKD FUNCTIONS EXPRESSIONS 
+
+(function invoked(){  // named iife
+  console.log("this is invoked function .");
+  })(); // this is iife
+  
+  (()=>{console.log("hwllo workd ")})  // using arrow function .
+  ();  // unnamed iife
+  
+  ((...myname)=>{
+      // console.log(`hello myname is ${myname}`)
+  })("cryptic");
+
+  

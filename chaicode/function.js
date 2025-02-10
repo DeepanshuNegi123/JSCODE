@@ -406,13 +406,15 @@ hume();
 
 
 
-// IMMEDIATELY INVOEKD FUNCTIONS EXPRESSIONS 
+// IMMEDIATELY INVOkeD FUNCTIONS EXPRESSIONS 
 
 (function invoked(){  // named iife
-  console.log("this is invoked function .");
+  // console.log("this is invoked function .");
   })(); // this is iife
   
-  (()=>{console.log("hwllo workd ")})  // using arrow function .
+  (()=>{
+    // console.log("hwllo workd ")
+  })  // using arrow function .
   ();  // unnamed iife
   
   ((...myname)=>{

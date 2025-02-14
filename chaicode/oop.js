@@ -232,4 +232,5 @@ var person = new chain("deepanshu ", "dfsdffs888","sjfbjs");
 
 /*instead of writing again and agin we can write at one time .*/
 
-person.login().updatescroll().logout();
+person.login().updatescroll().logout(); 
+

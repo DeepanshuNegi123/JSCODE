@@ -113,6 +113,7 @@ const up = {...obj1};
 
 
 // OBJECTS INSIDE ARRAY //
+
 const users =[
 
     {
@@ -165,9 +166,66 @@ const course = {
 
 // write the property in the braces and then automatically we dont have to use dot operator .
 const  {time} = course;
-console.log(course);
-console.log(time);
+// console.log(course);
+// console.log(time);
  
 
+function namisan()
+
+{
+  console.log("h");
+  console.log("e");
+  console.log("l");
+  console.log("l");
+  console.log("0");
+  console.log("b");
+  console.log("e");
+  console.log("l");
+  console.log("l");
+  console.log("o");
+   
+}
+
+namisan();
+
+
+  function robichan() {
+   const a = 45;
+   const b = 44;
+   return a+b;
+ }
+// console.log(robichan());
+
+
+// yes this means js supports function overloading .
+function robinchan(number1 , number2 , number3){
+  // console.log(number1+number2+number3);
+}
+robinchan(34,"45",56,);
+
+function give (){
+  // console.log(45+34);
+
+}
+const a = give();
+// console.log(a); // undefined 
+
+function loginusername(name){
+  if (name === undefined)
+{
+  return "plaease enter a username "
+;
+}  
+else {
+     return `username is ${name} .`;
+}
+
+}
+
+const b = loginusername(); // when empty print is empty 
+const c = loginusername("andrew");
+
+console.log(b);
+console.log(c);
 
 

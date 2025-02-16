@@ -142,4 +142,59 @@ const username = books.map((bl) => bl.name);
 
 const namee = [ 1,4,5,6,7,7,68,7,8];
 const  hello = namee.map((num)=> num + 10); // helps in applying calculations to the elements in the array.
-console.log(hello);
+// console.log(hello);
+
+
+// CHAINING IN JS 
+// combining the functions .
+const number = namee
+.map((numee)=>numee *10)
+.map((numee) => numee+10)
+.filter((numee) => numee>=70 );
+// console.log(number)
+
+
+
+// reduce in js 
+
+// reduce is also a callback fucntion .
+
+// const mynumber = [1,2,3];
+// const total = mynumber.reduce(function (acc , value){console.log(`acc - ${acc} and value: ${value}`)
+//     return acc + value ;
+// } , 0)
+// console.log(total);
+
+
+//  const mytotal  = mynumber.reduce((acc, value)=>{return acc+value},0);
+//  console.log(mytotal);
+
+
+
+const cart = [
+
+{
+    name : "heha",
+    id: "123",
+    arrival:"arriving in 34 days",
+    price:34
+    
+},
+{
+    name : "hehaa",
+    id: "1236",
+    arrival:"arriving in 340 days",
+    price:330
+    
+},
+{
+    name : "hehaaa",
+    id: "123456",
+    arrival:"arriving in 304 days",
+    price:880
+}
+
+];
+
+const variable = cart.reduce((accu, number)=>{ return accu+number.price},0);
+console.log(variable);

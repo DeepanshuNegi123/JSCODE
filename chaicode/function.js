@@ -422,3 +422,36 @@ hume();
   })("cryptic");
 
   
+
+  /// ARROW FUNCTIONS
+const add = (a,b)=>{
+  return a+b;
+}
+console.log(add(2,5));
+
+
+
+// iife 
+( () =>{
+  console.log("hwllo");
+}) ();   // iife 
+
+
+// spread operator .
+const hllo = (x,y,z)=>{
+  console.log(x+y+z);
+}
+hllo(23,45,67);
+
+
+
+//spread operator .
+
+const heha = (...args)=>{
+
+
+for (let a = 0 ; a<args.length; a++){
+  console.log( args[a]);
+}
+}
+heha(23,45,46,46,46,6,6,56);

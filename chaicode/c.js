@@ -90,15 +90,55 @@
 // console.log(namee); 
 
 
-let a = 10;
-let b = a++;
-console.log(b); // 10
+// let a = 10;
+// let b = a++;
+// console.log(b); // 10
 
-console.log(a+b);//21
+// console.log(a+b);//21
 
-let num = 1;
-// const sum = ++num + num++;
-console.log(++num + num++);
-// console.log(sum);  //4
+// let num = 1;
+// // const sum = ++num + num++;
+// console.log(++num + num++);
+// // console.log(sum);  //4
 
 
+// important 
+
+
+// var foo = "🦁";
+
+// function showname(){
+
+//     foo = "😖";
+//     return  ;
+
+//     function foo(){};
+
+// }
+
+// showname();
+// console.log(foo);
+
+
+function sum(num1,num2){
+    "use strict";
+    num1 = 34;
+    num2 = 45;
+    // console.log(arguments[0]+arguments[1]);
+}
+
+sum(23,45);  // here the num1 and num2 will be taken as the input as the are defined after .
+// but we can use strict to strict the usage of these .
+
+// IMMEDIATELY INVOEKD FUNCTIONS EXPRESSIONS 
+
+(function invoked(){  // named iife
+console.log("this is invoked function .");
+})(); // this is iife
+
+(()=>{console.log("hwllo workd ")})  // using arrow function .
+();  // unnamed iife
+
+((...myname)=>{
+    console.log(`hello myname is ${myname}`)
+})("cryptic");

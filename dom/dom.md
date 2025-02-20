@@ -68,11 +68,16 @@ title.style.padding = "xpx" // this will provide the padding of given in our  si
 
 ```
 
+
 1. document.getElementById('name of the id');
 2. document.getElementById('').getAttributes.
 3. document.getElementById('').getAttributes.
 4. title.style.padding = '45px' // can give padding to the object .
 5. idname.textcontent // will provide me content  written inside .
 6. difference in innerHTML / innerText/ textcontent
+7. document.querySelectorAll();
+8. document.querySelectorAll() provides us the detil of the elements in the form of nodelist not full array but with some properties of the array but   by using Array.From(name) we can use all propertires of the array.
+
+9. 
 
 // above command will provide us  the id element needed .

@@ -78,6 +78,13 @@ title.style.padding = "xpx" // this will provide the padding of given in our  si
 7. document.querySelectorAll();
 8. document.querySelectorAll() provides us the detil of the elements in the form of nodelist not full array but with some properties of the array but   by using Array.From(name) we can use all propertires of the array.
 
-9. 
+9. const name = document.querySelector(nameofclass);     name.children will provide us the html collection of the class parent and  now we can iterate through the html using for loop and index as html colllection uses somewhat similar to array.
+
+
+10. htmlcollection.firstelementchild  
+
+
+ 
+
 
 // above command will provide us  the id element needed .

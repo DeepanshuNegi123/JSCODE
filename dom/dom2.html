@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black; color: white;">
+    
+    <div class="parent">
+     <div class="day">monday</div>
+     <div class="day">tuesday</div>
+     <div class="day">wednesday</div>
+     <div class="day">thursday</div>
+     <div class="day">friday</div>
+     <div class="day">saturday</div>
+
+
+    </div>
+</body>
+
+<script>
+//  const parent =document.querySelector('.parent');
+// // console.log(parent);
+// // document.write(parent);
+// // console.log(parent.children[3].innerText);
+// const nodes = document.querySelectorAll('.parent');
+// const into = Array.from(nodes);
+// for (let  i = 0 ; i<into.length; i++){
+//        console.log(into[i]);
+// }
+
+
+const parent = document.querySelector('.parent');
+// console.log(parent);
+// console.log(parent.children);
+
+
+for (let i = 0 ; i<parent.children.length; i++){
+   console.log(parent.children[i].innerText);
+}
+
+
+// CREATING A DIV ELEMENT  
+const div = document.createElement('div') // creating a new element 
+console.log(div);
+div.className = "main";
+console.log(div.id = Math.floor(Math.random()*10));
+
+div.setAttribute("title", "generate");
+div.style.backgroundColor = "green";
+div.style.padding= "60px";
+div.innerText = "hello world";
+const text = document.createTextNode("hello world");
+div.appendChild(text);
+document.body.appendChild(div);
+</script>
+
+</html>

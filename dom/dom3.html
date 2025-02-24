@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>erasing the element</title>
+</head>
+<body style = "background-color: black; color: white;">
+    
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+
+<script>
+
+    function addlanguage(...langname){
+      const li =   document.createElement('li'); // creating a new element 
+      li.innerHTML =` ${langname}`; // inserting a innerhtml inside li taking  a value inside our li element .
+      document.querySelector('.language').appendChild(li); // selecting class language and appending in it .
+    }
+
+    addlanguage('hello');
+    addlanguage('world');
+    addlanguage('i am cryptic');
+
+
+    function addopti (langname){
+         // creating list item
+         const item = document.createElement('li');
+         li.appendChild(document.createTextNode(langname));
+         document.querySelector('.language').appendChild(li);
+    }
+
+    // editing
+
+  const language =   document.querySelector('li:nth-child(2)');
+  const newli  = document.createElement('li');
+  newli.textContent = "hehu";
+  language.replaceWith(newli); // replacing 2nd element with new created .
+
+  // remove 
+  const remove = document.querySelector('li:last-child');
+  remove.remove(); // removal of last element .
+
+</script>
+</html>

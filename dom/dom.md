@@ -82,6 +82,11 @@ title.style.padding = "xpx" // this will provide the padding of given in our  si
 
 
 10. htmlcollection.firstelementchild  
+11. name.parentElement , provides us  the parent element of the class. any needed we write any class inside query selector then can find out its parent by using (.parentElement)
+
+12. .childnodes
+
+13. 
 
 
  

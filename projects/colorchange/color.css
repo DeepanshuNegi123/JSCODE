@@ -1,0 +1,45 @@
+body{
+    color: black;
+    background-color: rgba(245, 245, 245, 0.71);
+}
+header{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    gap: 44px;
+    background-color:white;
+}
+
+.this{
+justify-self: center;
+       padding: 150px;
+       display: flex;
+       flex-direction: row;
+     column-gap: 2cap;
+       
+     
+
+}
+
+.button{
+    height: 150px;
+    width: 150px;
+   
+}
+
+
+#grey{
+    background-color: grey;
+}
+#white{
+    background-color: white;
+}
+#yellow{
+    background-color: yellow;
+}
+#blue{
+    background-color: blue;
+}
+#purple{
+    background-color: purple;
+}

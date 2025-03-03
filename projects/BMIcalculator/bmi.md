@@ -12,13 +12,13 @@
     //  const height = document.getElementById('input0').value;
     //  console.log(height);
 
-    const height =parseInt(document.querySelector('#input0').value);
-    const weight =parseInt(document.querySelector('#input1').value);
+    const height =parseInt(document.querySelector('#input0').value); // selecting  id inputs's value 
+    const weight =parseInt(document.querySelector('#input1').value); 
     const results = (document.querySelector('.results'));
     // const spans = results.querySelector('.span');
     const ans = document.querySelector('.bmi');
     if (height===''|| height <0 || isNaN(height) || weight<0 || weight ==='' || isNaN(weight)){
-        results.innerHTML= `PROVIDE VALID INPUT  ${height}cm  ${weight}cm `;
+        results.innerHTML= `PROVIDE VALID INPUT  ${height}cm  ${weight}cm `; // checking  the validation  of height and weight .
     }
     
     // else if(weight<=0 || weight ==='' || isNaN(weight) ){
@@ -29,10 +29,11 @@
         const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
         results.innerHTML = `height : ${height} <br>  weight : ${weight}`;
         // spans.innerText= `bmi is ${bmi}`;
-        ans.innerHTML=(`bmi is: ${bmi}`);
+        ans.innerHTML=(`bmi is: ${bmi}`); // inside an empty element , class = bmi we add  the calculated bmi inside the  bmi and then display it on the screen .
     }
     
  });
+
  ```
 
 

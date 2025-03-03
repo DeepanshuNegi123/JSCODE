@@ -33,3 +33,99 @@
     }
     
  });
+ ```
+
+
+ ``` html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Index</title>
+   <link rel="stylesheet" href="bmi.css">
+</head>
+<body>
+    <div class="container">
+
+        <h3>BMI CALACULATOR</h3> 
+        <div class="form" >
+            <form action="bmi.js">
+            <label for= "input0">enter your height</label>
+            <br>
+            <input type="integer" name="number" id="input0" placeholder="height in cm">
+            <br><br>
+
+
+            <label for="input1" >enter your weight</label>
+            <br>
+            <input type="integer" name="number" id="input1" placeholder="weight in kg ">
+
+<br> <br>
+
+            <button type="submit">submit</button>
+
+            <div class="guide">
+            <h3>Under Weight = less than 18.6</h3>
+            
+            <h3>Normal Weight = 18.6 and 24.9</h3>
+            
+            <h3>Overweight = Greater than 24.9</h3>
+            </div>
+            <div class="results">
+                <span class="span">
+
+                </span>
+            </div>
+            <div class="bmi">
+                
+            </div>
+            
+            </form>
+          
+
+
+        </div>
+    </div>
+
+    
+
+    <script src="bmi.js"></script>
+</body>
+</html>
+ ```
+
+ ``` css
+
+.form
+{
+    padding: 50px;
+    border: 1px solid black;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ 
+    
+
+
+
+}
+
+button{
+    width: 50%;
+    padding: auto;
+}
+.container{
+    justify-items: center;
+    align-items: center;
+}
+
+input{
+ 
+    width: 50%;
+    text-align: center;
+
+}
+ ```

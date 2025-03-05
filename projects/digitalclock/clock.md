@@ -71,7 +71,7 @@ function strtclk() {
     function updateClock() {
         if (!isrunning) return; // Stop execution when isrunning is false
 
-        let date = new Date();
+        let date = new Date(); // provides a date inbuilt function Uses the system clock to get the current time. not an api feature of ecmascript .
         first.innerHTML = date.toLocaleTimeString(); // Update UI
 
         setTimeout(updateClock, 1000); // Call itself recursively

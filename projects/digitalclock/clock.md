@@ -88,5 +88,6 @@ function stopclk() {
 second.addEventListener("click", strtclk); // after click a function will be called strtclk 
 third.addEventListener("click", stopclk);
 
+
 ```
 

@@ -1,0 +1,35 @@
+nav{
+    background-color: black;
+    color: white;
+    font-size: larger;
+   text-align: center;
+}
+body{
+    background-color: grey;
+     
+}
+
+#number0{
+    width: 200px;
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 6px;
+    
+
+}
+
+#sub
+
+{
+
+    border: 1px solid black;
+    margin-left: 28%;
+    background-color: black;
+    color: white;
+    padding: 4%;
+    border-radius: 8px;
+  
+}
+.insert{
+    justify-self: center;
+}

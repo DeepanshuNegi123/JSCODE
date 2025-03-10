@@ -89,5 +89,10 @@ event.target.tagName(); // tagname will provide us
 
 // TagName()
 
-In JavaScript, tagName is a property of an HTML element that returns the tag name of the element as a string. It provides the name of the element, which corresponds to the type of HTML tag used to create that element (like div, p, span, a, etc.).
+In JavaScript, tagName is a property of an
+ HTML element that returns the tag name of the 
+ element as a string. It provides the name of 
+ the element, which corresponds to the type of
+ 
+ HTML tag used to create that element (like div, p, span, a, etc.).
 ```

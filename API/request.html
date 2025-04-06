@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api_request</title>
+</head>
+<body style="background-color:rgb(0, 147, 110);">
+    <div class="text">
+
+<p>
+    0 unsent client has  been created . open() not called yet.
+  <br>  1. opened open () has been called. <br>
+
+2 . header_received send() has been called, and headers and status are available.
+3.   loading downloading ; responsetext holds partial data.
+4. done the operation is complete.
+
+</p>
+
+
+    </div>
+    
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/deepanshunegi123'
+   const har =  new XMLHttpRequest();
+    har.open('GET',requestUrl);
+//   const heah = setInterval(() => {
+// //     console.log(har.readyState);
+// //   }, 3000);
+har.onreadystatechange = function (){
+    console.log(har.readyState);
+    if(har.readyState === 4){
+        const hello = this.responseText;
+        console.log(this.responseText)
+        console.log(JSON.parse(hello.followers));
+        console.log(JSON.parse(hello.photo))
+    }
+    
+}
+    har.send();
+</script>
+</html>

@@ -32,6 +32,8 @@ A Promise has 3 states:
 
 State	Meaning
 Pending	The async task hasn’t finished yet.
+
 Fulfilled	It completed successfully → we call resolve().
+
 Rejected	It failed → we call reject().
 

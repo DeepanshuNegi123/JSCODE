@@ -92,33 +92,53 @@
 //     console.log("finally the proimse is accepted or reejcted.")
 // })
     
-const five = new Promise(function(resolve , reject){
-    setTimeout(()=>{
-        let error =  true;
-        if (!error){
-            resolve({username :"js" , password:"rematch"});
-        }
-
-        else {
-            reject ('error : in js something went wrong;')
-        }
-    },3000);
-});
 
 
-async function namee(){
-   try
-   {
+// const five = new Promise(function(resolve , reject){
+//     setTimeout(()=>{
+//         let error =  true;
+//         if (!error){
+//             resolve({username :"js" , password:"rematch"});
+//         }
 
-    const response = await five;
+//         else {
+//             reject ('error : in js something went wrong;')
+//         }
+//     },3000);
+// });
 
-console.log(response);
 
 
-   }
-   catch(error){
-console.log(error)
-   }
+// async function namee(){
+//    try
+//    {
+//     const response = await five;
+// console.log(response);
+//    }
+//    catch(error){
+// console.log(error)
+//    }
+// }
+
+// namee();
+
+
+
+async function choosen(){
+try {
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    // const data = response.json();
+    // console.log(data);
+    console.log(response);
+    // console.log(response.date);
+
 }
 
-namee();
+catch(error){
+    console.log("Error : ");
+
+}
+
+}
+choosen();

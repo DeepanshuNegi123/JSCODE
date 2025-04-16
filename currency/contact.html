@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Connect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #737070;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            
+            justify-content: center;
+            padding: 20px;
+            gap: 3rem;
+        }
+
+        .form {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #000dff;
+            border-radius: 8px;
+            padding: 3%;
+            background-color: #8289fd;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 500px;
+            color: antiquewhite;
+        }
+
+        .form h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            color: aliceblue;
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .form input,
+        .form textarea {
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form textarea {
+            min-height: 150px;
+            resize: vertical;
+            font-size: 1rem;
+        }
+
+        button {
+            margin-top: 3%;
+            width: 100%;
+            border-radius: 4px;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            background-color: #565bad;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #4b4b93;
+        }
+
+        @media (max-width: 600px) {
+            .form {
+                padding: 20px;
+                width: 90%;
+            }
+        }
+
+      
+
+
+        nav {
+    background: linear-gradient(135deg, #6b73ff 0%, rgb(44, 40, 71) 100%);
+    color: white;
+    padding: 1rem 0;
+/* or 'sticky' if you want it to scroll with content */
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* Remove these problematic properties: */
+    /* margin-top: -41%; */
+    /* margin-left: 2%; */
+    /* justify-self: first baseline; */
+}
+            
+
+      
+
+
+
+            .navcontain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 150px 0 190px;
+    color: white; 
+     display: flex; 
+            justify-content: space-between;
+            align-items: center;
+
+       
+}
+            
+
+     
+
+        .nav-links{
+            display: flex;
+           
+            gap:2rem;
+            list-style: none;
+            text-decoration: none;
+            font-size: large;
+
+        }
+        .nav-links li a{
+            color: white;
+            text-decoration: none;
+        }
+        .logo{
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+   
+    </style>
+</head>
+
+
+
+<body>
+    
+    <nav >
+        <div class="navcontain">
+            <div class="logo">FX AI</div>
+            <ul class="nav-links">
+                <li><a href="curr.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="calculate.html">Live Calculator</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    
+</nav>
+    <div class="container">
+
+
+        <form method="post" class="form" action='https://formsubmit.co/deepanshu9760873328@gmail.com'>
+            <h1>QUERY FORM</h1>
+
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Enter your query here</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    
+</script>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FX AI - Live Currency Calculator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: rgb(200, 202, 250);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navbar */
+        nav {
+            background: linear-gradient(135deg, #6b73ff 0%, rgb(44, 40, 71) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Calculator Section */
+        .calculator {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        
+        .calculator-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .converter-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .input-group input, 
+        .input-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .swap-button {
+            background: #6b73ff;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 auto;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .swap-button:hover {
+            background: #000dff;
+        }
+        
+        .result {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f0f4ff;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6b73ff;
+            margin: 0.5rem 0;
+        }
+        
+        .rate-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .last-updated {
+            text-align: center;
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* AI Insights Section */
+        .ai-insights {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .ai-insights h3 {
+            margin-bottom: 1rem;
+            color: #6b73ff;
+        }
+        
+        .insight-card {
+            background: #f8f9ff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .timer{
+            border:2px solid #000dff;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            border-radius: 8px;
+            margin-left: -350px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: larger;
+        font-weight: bold;
+        color: #f0f4ff;
+        background-color: #000dff;
+
+
+        }
+
+        .border:hover{
+          transform: translateY(-15px) perspective(1000px) translateZ(8px);
+          
+          /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); */
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .converter-form {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .border{
+            border: 2px solid #000dff;
+            width: max-content;
+            padding: 1%;
+            border-radius: 8px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container navbar">
+            <div class="logo">FX AI</div>
+            <ul class="nav-links">
+                <li><a href="curr.html">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="calculate.html">Live Calculator</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Calculator Section -->
+    <section class="calculator">
+        <div class="container">
+            <div class="border" style="background-color: #4f56de; color: white;">
+            <div id="clock" style="font-family: Arial; font-size:x-large; "></div>
+            </div>
+            <h2 class="section-title">Live Currency Calculator</h2>
+            <div class="calculator-container">
+                <div class="converter-form">
+                    <div class="input-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" value="1" min="0" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="from-currency">From Currency</label>
+                        <select id="from-currency">
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                        </select>
+                    </div>
+                    
+                    <button class="swap-button" id="swap-currencies">↕ Swap Currencies</button>
+                    
+                    <div class="input-group">
+                        <label for="to-currency">To Currency</label>
+                        <select id="to-currency">
+                            <option value="EUR">EUR - Euro</option>
+                            <option value="USD">USD - US Dollar</option>
+                            <option value="GBP">GBP - British Pound</option>
+                            <option value="JPY">JPY - Japanese Yen</option>
+                            <option value="AUD">AUD - Australian Dollar</option>
+                            <option value="CAD">CAD - Canadian Dollar</option>
+                            <option value="CHF">CHF - Swiss Franc</option>
+                            <option value="CNY">CNY - Chinese Yuan</option>
+                            <option value="INR">INR - Indian Rupee</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="result">
+                    <div>Conversion Result</div>
+                    <div class="result-value" id="result-value">0.00</div>
+                    <div class="rate-info" id="rate-info">1 USD = 0.00 EUR</div>
+                </div>
+                
+                <div class="last-updated" id="last-updated">Rates last updated: --</div>
+            </div>
+            
+            <div class="ai-insights">
+                <h3>AI-Powered Currency Insights</h3>
+                <div class="insight-card" id="trend-analysis">
+                    <strong>Trend Analysis:</strong> <span id="trend-text">Loading analysis...</span>
+                </div>
+                <div class="insight-card" id="best-time">
+                    <strong>Best Time to Exchange:</strong> <span id="best-time-text">Calculating optimal time...</span>
+                </div>
+                <div class="insight-card" id="market-sentiment">
+                    <strong>Market Sentiment:</strong> <span id="sentiment-text">Analyzing market data...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FX AI</h3>
+                    <p>Intelligent currency exchange solutions powered by artificial intelligence.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="calculator.html">Live Calculator</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Currency News</a></li>
+                        <li><a href="#">Market Analysis</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@fxai.com">info@fxai.com</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 FX AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+       // Replace this with your actual ExchangeRate-API key
+const API_KEY = '24d2b6cf9d23139c12b1d285';
+const BASE_URL = 'https://v6.exchangerate-api.com/v6';
+
+// DOM Elements
+const amountInput = document.getElementById('amount');
+const fromCurrencySelect = document.getElementById('from-currency');
+const toCurrencySelect = document.getElementById('to-currency');
+const resultValue = document.getElementById('result-value');
+const rateInfo = document.getElementById('rate-info');
+const lastUpdated = document.getElementById('last-updated');
+const swapButton = document.getElementById('swap-currencies');
+
+// AI Insights Elements
+const trendText = document.getElementById('trend-text');
+const bestTimeText = document.getElementById('best-time-text');
+const sentimentText = document.getElementById('sentiment-text');
+
+// Fetch supported currencies and populate dropdowns
+async function populateCurrencyDropdowns() {
+    try {
+        const response = await fetch(`${BASE_URL}/${API_KEY}/codes`);
+        const data = await response.json();
+
+        if (data.result !== 'success') {
+            throw new Error('Failed to fetch currency codes');
+        }
+
+        const codes = data.supported_codes;
+
+        // Clear existing options
+        fromCurrencySelect.innerHTML = '';
+        toCurrencySelect.innerHTML = '';
+
+        codes.forEach(([code, name]) => {
+            const optionFrom = new Option(`${name} (${code})`, code);
+            const optionTo = new Option(`${name} (${code})`, code);
+            fromCurrencySelect.add(optionFrom);
+            toCurrencySelect.add(optionTo);
+        });
+
+        // Set default selections
+        fromCurrencySelect.value = 'USD';
+        toCurrencySelect.value = 'INR';
+
+        calculateConversion();
+    } catch (error) {
+        console.error('Error fetching currency codes:', error);
+    }
+}
+
+// Fetch exchange rates
+async function fetchExchangeRates(baseCurrency) {
+    try {
+        const response = await fetch(`${BASE_URL}/${API_KEY}/latest/${baseCurrency}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching exchange rates:', error);
+        return null;
+    }
+}
+
+// Calculate conversion
+async function calculateConversion() {
+    const amount = parseFloat(amountInput.value);
+    const fromCurrency = fromCurrencySelect.value;
+    const toCurrency = toCurrencySelect.value;
+
+    if (isNaN(amount)) {
+        resultValue.textContent = '0.00';
+        return;
+    }
+
+    const ratesData = await fetchExchangeRates(fromCurrency);
+    if (!ratesData || ratesData.result !== 'success') {
+        resultValue.textContent = 'Error';
+        rateInfo.textContent = 'Could not fetch rates';
+        lastUpdated.textContent = '';
+        return;
+    }
+
+    const rate = ratesData.conversion_rates[toCurrency];
+    const result = amount * rate;
+
+    resultValue.textContent = result.toFixed(2);
+    rateInfo.textContent = `1 ${fromCurrency} = ${rate.toFixed(4)} ${toCurrency}`;
+    lastUpdated.textContent = `Rates last updated: ${ratesData.time_last_update_utc}`;
+
+    // Generate mock AI insights (replace with real API calls)
+    generateAIInsights(fromCurrency, toCurrency, rate);
+}
+
+// Generate mock AI insights
+function generateAIInsights(fromCurrency, toCurrency, rate) {
+    // These are mock insights - replace with real API calls to your AI service
+    const trends = ['upward', 'downward', 'stable'];
+    const times = ['now', 'in 2 days', 'next week'];
+    const sentiments = ['bullish', 'bearish', 'neutral'];
+
+    trendText.textContent = `The ${fromCurrency}/${toCurrency} pair is showing a ${trends[Math.floor(Math.random() * trends.length)]} trend.`;
+    bestTimeText.textContent = `Best time to exchange might be ${times[Math.floor(Math.random() * times.length)]}.`;
+    sentimentText.textContent = `Market sentiment is ${sentiments[Math.floor(Math.random() * sentiments.length)]} for this currency pair.`;
+}
+
+// Swap currencies
+function swapCurrencies() {
+    const temp = fromCurrencySelect.value;
+    fromCurrencySelect.value = toCurrencySelect.value;
+    toCurrencySelect.value = temp;
+    calculateConversion();
+}
+
+// Event listeners
+amountInput.addEventListener('input', calculateConversion);
+fromCurrencySelect.addEventListener('change', calculateConversion);
+toCurrencySelect.addEventListener('change', calculateConversion);
+swapButton.addEventListener('click', swapCurrencies);
+
+// Initialize currency dropdowns on page load
+populateCurrencyDropdowns();
+
+
+function updateClock() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  document.getElementById('clock').textContent = timeString;
+//   console.log(timeString);
+
+
+}
+
+// Update immediately and then every second
+updateClock();
+setInterval(updateClock, 1000);
+
+
+</script>
+    
+    
+</body>
+</html>
